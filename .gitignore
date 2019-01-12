@@ -1,3 +1,5 @@
 # IntelliJ stuff
 .idea
 .iml
+go.sum
+

@@ -8,11 +8,9 @@ import (
 	"sync"
 )
 
-
 func ErrorHandler(e error) {
 	fmt.Println("Error is", e)
 }
-
 
 func dangerousAction() error {
 	return errors.New("some random error")

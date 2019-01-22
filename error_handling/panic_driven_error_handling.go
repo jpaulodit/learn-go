@@ -44,7 +44,7 @@ func StringToSqrt(str string) (float64, error) {
 }
 
 // Performs the actual square root
-func Sqrt(f float64) (float64, error)  {
+func Sqrt(f float64) (float64, error) {
 	if f < 0 {
 		return 0, errors.New("cannot calculate sqrt of a negative number")
 	} else {
@@ -63,7 +63,7 @@ func checkErr(err error) {
 	}
 }
 
-func LogSqrtPanic(str string)  {
+func LogSqrtPanic(str string) {
 	// recover() pairs with panic() and the method is only meaningful inside a deferred function.
 	defer func() {
 		if r := recover(); r != nil {
@@ -128,8 +128,7 @@ func StringToSqrtPanic2(str string) float64 {
 	return f
 }
 
-
-func main()  {
+func main() {
 	LogSqrt("4")
 	LogSqrtPanic("16")
 	LogSqrtPanic("-10")

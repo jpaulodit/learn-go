@@ -57,5 +57,3 @@ func FormatErrors(e map[string][]string) string {
 func (e *ValidationErr) Error() string {
 	return FormatErrors(e.ErrorMessages)
 }
-
-

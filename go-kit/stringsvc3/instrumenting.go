@@ -10,7 +10,7 @@ import (
 func instrumentingMiddleware(
 	requestCount metrics.Counter,
 	requestLatency metrics.Histogram,
-	countResult metrics.Histogram,) ServiceMiddleware {
+	countResult metrics.Histogram) ServiceMiddleware {
 	return func(next StringService) StringService {
 		return instrmw{requestCount, requestLatency, countResult, next}
 	}

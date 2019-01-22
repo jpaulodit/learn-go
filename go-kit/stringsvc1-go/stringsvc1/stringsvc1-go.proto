@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package stringsvc1;
+
+service StringService {
+    // Calculate length of string
+    rpc Count (CountRequest) returns (CountResponse) {
+    }
+
+    // Converts string to uppercase
+    rpc Uppercase (UppercaseRequest) returns (UppercaseResponse) {
+    }
+}
+
+message CountRequest {
+    string S = 1;
+}
+
+message CountResponse {
+    int32 V = 1;
+}
+
+message UppercaseRequest {
+    string S = 1;
+}
+
+message UppercaseResponse {
+    string V = 1;
+    string Err = 2;
+}

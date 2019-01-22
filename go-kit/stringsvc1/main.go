@@ -17,7 +17,7 @@ type StringService interface {
 	Count(string) int
 }
 
-type stringService struct {}
+type stringService struct{}
 
 var ErrEmpty = errors.New("Empty string")
 
@@ -31,7 +31,6 @@ func (stringService) Uppercase(s string) (string, error) {
 func (stringService) Count(s string) int {
 	return len(s)
 }
-
 
 type uppercaseRequest struct {
 	S string `json:"s"`
@@ -49,7 +48,6 @@ type countRequest struct {
 type countResponse struct {
 	V int `json:"v"`
 }
-
 
 func makeUppercaseEndpoint(svc StringService) endpoint.Endpoint {
 	return func(_ context.Context, request interface{}) (interface{}, error) {
@@ -69,7 +67,6 @@ func makeCountEndpoint(svc StringService) endpoint.Endpoint {
 		return countResponse{v}, nil
 	}
 }
-
 
 func main() {
 	svc := stringService{}
